@@ -13,6 +13,13 @@ import br.com.pratica.profissional.backend.ProjetoADS.Helpers.PropertyHelper;
 
 public class ConsultaUsuarios extends FabricaConexao {
 
+	/**
+	 * Consulta os tipos de usuarios e seus codigos
+	 * 
+	 * @throws SQLException
+	 * 
+	 * @author danielrocha
+	 */
 	public static void consultaUsuarios() throws SQLException {
 		
 		Connection conexao = getConnection(PropertyHelper.getStringProperty("env.banco.nome"));

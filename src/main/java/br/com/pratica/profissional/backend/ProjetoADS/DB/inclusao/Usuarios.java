@@ -13,6 +13,14 @@ public class Usuarios extends FabricaConexao {
 	private int codigo;
 	private String tipo;
 	
+	/**
+	 * Construtor
+	 * 
+	 * @param codigo
+	 * @param tipo
+	 * 
+	 * @author danielrocha
+	 */
 	public Usuarios(int codigo, String tipo) {
 		super();
 		this.codigo = codigo;
