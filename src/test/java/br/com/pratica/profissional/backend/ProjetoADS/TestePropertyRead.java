@@ -2,7 +2,7 @@ package br.com.pratica.profissional.backend.ProjetoADS;
 
 import java.io.IOException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.PropertyHelper;
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.PropertyHelper;
 
 public class TestePropertyRead {
 

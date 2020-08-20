@@ -9,7 +9,7 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.Crypto;
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.Crypto;
 
 public class TesteCrypto {
 

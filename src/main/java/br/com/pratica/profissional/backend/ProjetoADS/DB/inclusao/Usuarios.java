@@ -1,14 +1,39 @@
-package br.com.pratica.profissional.backend.ProjetoADS.inclusao;
+package br.com.pratica.profissional.backend.ProjetoADS.DB.inclusao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.FabricaConexao;
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.PropertyHelper;
+import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.FabricaConexao;
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.PropertyHelper;
 
 public class Usuarios extends FabricaConexao {
+
+	private int codigo;
+	private String tipo;
+	
+	public Usuarios(int codigo, String tipo) {
+		super();
+		this.codigo = codigo;
+		this.tipo = tipo;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 	/**
 	 * Insere no banco de dados os tipos de usuarios
@@ -17,7 +42,6 @@ public class Usuarios extends FabricaConexao {
 	 * 
 	 * @author danielrocha
 	 */
-	
 	public static void inserirUsuarios() {
 		
 		Connection conexao = getConnection(PropertyHelper.getStringProperty("env.banco.nome"));

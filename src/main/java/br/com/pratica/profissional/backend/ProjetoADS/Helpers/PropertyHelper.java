@@ -1,4 +1,4 @@
-package br.com.pratica.profissional.backend.ProjetoADS.Utils;
+package br.com.pratica.profissional.backend.ProjetoADS.Helpers;
 
 import java.io.InputStream;
 import java.util.Properties;

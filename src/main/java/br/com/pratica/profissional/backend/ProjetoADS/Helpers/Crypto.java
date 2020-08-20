@@ -1,4 +1,4 @@
-package br.com.pratica.profissional.backend.ProjetoADS.Utils;
+package br.com.pratica.profissional.backend.ProjetoADS.Helpers;
 
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidAlgorithmParameterException;

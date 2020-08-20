@@ -1,4 +1,4 @@
-package br.com.pratica.profissional.backend.ProjetoADS.criacao;
+package br.com.pratica.profissional.backend.ProjetoADS.DB.criacao;
 
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -11,8 +11,8 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.FabricaConexao;
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.PropertyHelper;
+import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.FabricaConexao;
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.PropertyHelper;
 
 public class CriarBanco extends FabricaConexao {
 

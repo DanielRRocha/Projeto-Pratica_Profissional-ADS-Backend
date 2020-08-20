@@ -1,10 +1,13 @@
-package br.com.pratica.profissional.backend.ProjetoADS.Utils;
+package br.com.pratica.profissional.backend.ProjetoADS.DB.Utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.Crypto;
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.PropertyHelper;
 
 public class FabricaConexao extends Crypto {
 

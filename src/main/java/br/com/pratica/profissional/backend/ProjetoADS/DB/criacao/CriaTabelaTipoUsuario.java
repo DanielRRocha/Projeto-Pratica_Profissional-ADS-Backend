@@ -1,10 +1,10 @@
-package br.com.pratica.profissional.backend.ProjetoADS.criacao;
+package br.com.pratica.profissional.backend.ProjetoADS.DB.criacao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.FabricaConexao;
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.PropertyHelper;
+import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.FabricaConexao;
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.PropertyHelper;
 
 public class CriaTabelaTipoUsuario extends FabricaConexao{
 

@@ -1,10 +1,10 @@
-package br.com.pratica.profissional.backend.ProjetoADS.inclusao;
+package br.com.pratica.profissional.backend.ProjetoADS.DB.inclusao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.FabricaConexao;
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.PropertyHelper;
+import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.FabricaConexao;
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.PropertyHelper;
 
 public class NovoCliente extends FabricaConexao {
 
