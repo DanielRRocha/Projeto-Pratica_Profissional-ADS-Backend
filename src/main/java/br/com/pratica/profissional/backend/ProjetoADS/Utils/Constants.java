@@ -2,7 +2,7 @@ package br.com.pratica.profissional.backend.ProjetoADS.Utils;
 
 public class Constants {
 
-	private static final String nome_banco_dados = "clientes";
+	private static final String nome_banco_dados = "marido_de_aluguel";
 
 	/**
 	 * Nome do banco de dados encapsulado

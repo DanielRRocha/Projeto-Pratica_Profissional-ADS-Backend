@@ -2,6 +2,7 @@ package br.com.pratica.profissional.backend.ProjetoADS.Utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -59,7 +60,7 @@ public class FabricaConexao {
 		
 		stmt.execute(comando);
 		
-		System.out.println("Comando sql '" + comando + "' realizado com sucesso");
+		System.out.println("Comando sql \n'" + comando + "\n' realizado com sucesso");
 	}
 
 	/**
@@ -79,5 +80,26 @@ public class FabricaConexao {
 		stmt.execute(comando);
 		
 		System.out.println("Comando sql '" + comando + "' realizado com sucesso");
+	}
+	
+	/**
+	 * Envia comando SQL para o banco de dados com Segurança contra SQL Injection
+	 * 
+	 * @param conexao
+	 * @param sql
+	 * @param param1
+	 * @param param2
+	 * @throws SQLException
+	 */
+	public static void comandoSql(Connection conexao, String sql, String param1, String param2) throws SQLException {
+
+		PreparedStatement stmt = conexao.prepareStatement(sql);
+
+		stmt.setString(1, param1);
+		stmt.setString(2, param1);
+
+		stmt.execute();
+		
+		System.out.println("Comando sql realizado com sucesso");
 	}
 }
