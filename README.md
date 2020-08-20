@@ -4,6 +4,8 @@
 
 Projeto de prática profissional ADS 5 Semestre Mackenzie
 
+Backend em Java utilizando JDBC e MySQL
+
 ##### Integrantes
 * Carlos Rodrigues de Oliveira
 * Daniel do Rosário Rocha
