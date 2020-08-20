@@ -27,6 +27,8 @@ public class CriarBanco extends FabricaConexao {
 	 * @throws NoSuchProviderException 
 	 * @throws NoSuchAlgorithmException 
 	 * @throws InvalidKeyException 
+	 * 
+	 * @author danielrocha
 	 */
 	
 	public static void criaBancoDeDados() throws SQLException, InvalidKeyException, NoSuchAlgorithmException, NoSuchProviderException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException {
@@ -34,7 +36,7 @@ public class CriarBanco extends FabricaConexao {
 		Connection conexao = getConnection();
 		
 		String sql = "CREATE DATABASE IF NOT EXISTS ";
-		comandoSql(conexao, sql, PropertyHelper.getStringProperty("env.banco.nome"));
+		comandoSql_(conexao, sql, PropertyHelper.getStringProperty("env.banco.nome"));
 		conexao.close();
 	}
 

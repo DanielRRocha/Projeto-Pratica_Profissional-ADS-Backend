@@ -50,7 +50,10 @@ public class FabricaConexao extends Crypto {
 	 * 
 	 * @param conexao
 	 * @param sql
+	 * 
 	 * @throws SQLException
+	 * 
+	 * @author danielrocha
 	 */
 	public static void comandoSql(Connection conexao, String sql) throws SQLException {
 
@@ -69,9 +72,12 @@ public class FabricaConexao extends Crypto {
 	 * @param conexao
 	 * @param sql
 	 * @param nome
+	 * 
 	 * @throws SQLException
+	 * 
+	 * @author danielrocha
 	 */
-	public static void comandoSql(Connection conexao, String sql, String nome) throws SQLException {
+	public static void comandoSql_(Connection conexao, String sql, String nome) throws SQLException {
 
 		Statement stmt = conexao.createStatement();
 
@@ -89,7 +95,34 @@ public class FabricaConexao extends Crypto {
 	 * @param sql
 	 * @param param1
 	 * @param param2
+	 * 
 	 * @throws SQLException
+	 * 
+	 * @author danielrocha
+	 */
+	public static void comandoSql(Connection conexao, String sql, int param1, String param2) throws SQLException {
+
+		PreparedStatement stmt = conexao.prepareStatement(sql);
+
+		stmt.setLong(1, param1);
+		stmt.setString(2, param2);
+
+		stmt.execute();
+		
+		System.out.println("Comando sql realizado com sucesso");
+	}
+	
+	/**
+	 * Envia comando SQL para o banco de dados com Segurança contra SQL Injection
+	 * 
+	 * @param conexao
+	 * @param sql
+	 * @param param1
+	 * @param param2
+	 * 
+	 * @throws SQLException
+	 * 
+	 * @author danielrocha
 	 */
 	public static void comandoSql(Connection conexao, String sql, String param1, String param2) throws SQLException {
 

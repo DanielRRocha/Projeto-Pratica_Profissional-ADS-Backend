@@ -14,6 +14,8 @@ public class NovoCliente extends FabricaConexao {
 	 * @param nome
 	 * @param email
 	 * @throws SQLException
+	 * 
+	 * @author danielrocha
 	 */
 	
 	public static void inserirCliente(String nome, String email) throws SQLException {
