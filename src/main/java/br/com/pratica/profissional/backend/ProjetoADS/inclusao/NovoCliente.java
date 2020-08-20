@@ -5,8 +5,9 @@ import java.sql.SQLException;
 
 import br.com.pratica.profissional.backend.ProjetoADS.Utils.Constants;
 import br.com.pratica.profissional.backend.ProjetoADS.Utils.FabricaConexao;
+import br.com.pratica.profissional.backend.ProjetoADS.Utils.PropertyHelper;
 
-public class NovoCliente {
+public class NovoCliente extends FabricaConexao {
 
 	/**
 	 * Insere no banco de dados cliente recebido do FrontEnd
@@ -18,11 +19,11 @@ public class NovoCliente {
 	
 	public static void inserirCliente(String nome, String email) throws SQLException {
 		
-		Connection conexao = FabricaConexao.getConnection(Constants.getNome_banco_dados());
+		Connection conexao = getConnection(PropertyHelper.getStringProperty("env.banco.nome"));
 		
 		String sql = "INSERT INTO clientes (nome, email) VALUES (?, ?)";
 		
-		FabricaConexao.comandoSql(conexao, sql, nome, email);
+		comandoSql(conexao, sql, nome, email);
 		
 		System.out.println("Cliente incluido com sucesso!");
 		

@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class FabricaConexao {
+public class FabricaConexao extends Crypto {
 
 	/**
 	 * Inicia conexão com banco de dados
@@ -16,9 +16,9 @@ public class FabricaConexao {
 	
 	public static Connection getConnection() {
 		try {
-			String url = "jdbc:mysql://localhost:3306/?verifyServerCertificate=false&useSSL=true";
-			final String usuario = "root";
-			final String senha = "12345678";
+			String url = PropertyHelper.getStringProperty("env.banco.url");
+			final String usuario = PropertyHelper.getStringProperty("env.banco.usuario");
+			final String senha = PropertyHelper.getStringProperty("env.banco.senha");
 
 			return DriverManager.getConnection(url, usuario, senha);
 		} catch (SQLException e) {

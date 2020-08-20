@@ -5,8 +5,9 @@ import java.sql.SQLException;
 
 import br.com.pratica.profissional.backend.ProjetoADS.Utils.Constants;
 import br.com.pratica.profissional.backend.ProjetoADS.Utils.FabricaConexao;
+import br.com.pratica.profissional.backend.ProjetoADS.Utils.PropertyHelper;
 
-public class CriarTabelaClientes {
+public class CriarTabelaClientes extends FabricaConexao {
 
 	/**
 	 * Cria a tabela Clientes
@@ -16,7 +17,7 @@ public class CriarTabelaClientes {
 	
 	public static void criaTabelaClientes() throws SQLException {
 		
-		Connection conexao = FabricaConexao.getConnection(Constants.getNome_banco_dados());
+		Connection conexao = getConnection(PropertyHelper.getStringProperty("env.banco.nome"));
 		
 		String sql = "CREATE TABLE IF NOT EXISTS clientes ("
 				+ "codigo INT AUTO_INCREMENT PRIMARY KEY,"
@@ -24,7 +25,7 @@ public class CriarTabelaClientes {
 				+ "email VARCHAR(250) NOT NULL"
 				+ ")";
 		
-		FabricaConexao.comandoSql(conexao, sql);
+		comandoSql(conexao, sql);
 		
 		System.out.println("Tabela criada com sucesso");
 		
