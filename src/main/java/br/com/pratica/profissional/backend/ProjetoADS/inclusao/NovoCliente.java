@@ -3,7 +3,6 @@ package br.com.pratica.profissional.backend.ProjetoADS.inclusao;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.Constants;
 import br.com.pratica.profissional.backend.ProjetoADS.Utils.FabricaConexao;
 import br.com.pratica.profissional.backend.ProjetoADS.Utils.PropertyHelper;
 

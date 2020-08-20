@@ -11,7 +11,6 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.Utils.Constants;
 import br.com.pratica.profissional.backend.ProjetoADS.Utils.FabricaConexao;
 import br.com.pratica.profissional.backend.ProjetoADS.Utils.PropertyHelper;
 

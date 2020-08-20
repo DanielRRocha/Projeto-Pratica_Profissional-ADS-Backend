@@ -2,8 +2,8 @@ package br.com.pratica.profissional.backend.ProjetoADS;
 
 import java.sql.SQLException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.criacao.CriarBanco;
-import br.com.pratica.profissional.backend.ProjetoADS.criacao.CriarTabelaClientes;
+//import br.com.pratica.profissional.backend.ProjetoADS.criacao.CriarBanco;
+//import br.com.pratica.profissional.backend.ProjetoADS.criacao.CriarTabelaClientes;
 import br.com.pratica.profissional.backend.ProjetoADS.inclusao.NovoCliente;
 
 
