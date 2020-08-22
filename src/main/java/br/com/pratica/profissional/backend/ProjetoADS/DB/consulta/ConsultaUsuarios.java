@@ -1,49 +1,37 @@
 package br.com.pratica.profissional.backend.ProjetoADS.DB.consulta;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.FabricaConexao;
-import br.com.pratica.profissional.backend.ProjetoADS.DB.inclusao.Usuarios;
-import br.com.pratica.profissional.backend.ProjetoADS.Helpers.PropertyHelper;
+import br.com.pratica.profissional.backend.ProjetoADS.DB.model.Usuario;
 
 public class ConsultaUsuarios extends FabricaConexao {
 
+	
 	/**
-	 * Consulta os tipos de usuarios e seus codigos
-	 * 
-	 * @throws SQLException
+	 * Consulta ID e tipos de usuarios
 	 * 
 	 * @author danielrocha
 	 */
-	public static void consultaUsuarios() throws SQLException {
+	public static void showUsers() {
 		
-		Connection conexao = getConnection(PropertyHelper.getStringProperty("env.banco.nome"));
-		
-		String sql = "SELECT * FROM usuarios";
-		
-		Statement stmt = conexao.createStatement();
-		ResultSet resultado = stmt.executeQuery(sql);
-		
-		List<Usuarios> usuarios = new ArrayList<Usuarios>();
-		
-		while(resultado.next()) {
-			int codigo = resultado.getInt("codigo");
-			String tipo = resultado.getString("tipo");
-			usuarios.add(new Usuarios(codigo, tipo));
+		try {
+			
+			getConnection_Hibernate();
+			
+			Usuario admin = getEm().find(Usuario.class, 1L);
+			Usuario prestador = getEm().find(Usuario.class, 2L);
+			Usuario cliente = getEm().find(Usuario.class, 3L);
+			
+			System.out.println("\n\nId  | Tipo");
+			System.out.println(" " + admin.getId() + "  | " + admin.getTipo());
+			System.out.println(" " + prestador.getId() + "  | " + prestador.getTipo());
+			System.out.println(" " + cliente.getId() + "  | " + cliente.getTipo()+ "\n\n");
+			
+//			System.out.println(usuario.getNome());
+//			
+			getEm().close();
+			getEmf().close();
+		} catch (Exception e) {
+			System.out.println(e);
 		}
-		
-		System.out.println("Codigo  |Tipo");
-		for(Usuarios u: usuarios) {
-			System.out.println(u.getCodigo() + "       |" + u.getTipo());
-		}
-		
-		stmt.close();
-		conexao.close();
 	}
-	
 }

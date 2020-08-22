@@ -21,7 +21,8 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.49</version>
+			<!-- <version>5.1.49</version> -->
+			<version>8.0.16</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
@@ -36,6 +37,7 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.20.Final</version>
+			<!-- <version>6.0.0.Alpha6</version> -->
 		</dependency>
 
 

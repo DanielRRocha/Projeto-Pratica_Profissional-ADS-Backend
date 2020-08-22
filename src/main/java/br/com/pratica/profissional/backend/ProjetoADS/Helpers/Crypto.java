@@ -27,10 +27,6 @@ public class Crypto {
 	/**
 	 * Inicializa "driver" da crypto
 	 * 
-	 * @throws NoSuchAlgorithmException
-	 * @throws NoSuchProviderException
-	 * @throws NoSuchPaddingException
-	 * 
 	 * @author danielrocha
 	 */
 	private static void initialize() throws NoSuchAlgorithmException, NoSuchProviderException, NoSuchPaddingException {
@@ -50,14 +46,8 @@ public class Crypto {
 	 * 
 	 * @param value
 	 * @param key
-	 * @return
-	 * @throws NoSuchAlgorithmException
-	 * @throws NoSuchProviderException
-	 * @throws NoSuchPaddingException
-	 * @throws InvalidKeyException
-	 * @throws InvalidAlgorithmParameterException
-	 * @throws IllegalBlockSizeException
-	 * @throws BadPaddingException
+	 * 
+	 * @return string criptografada
 	 * 
 	 * @author danielrocha
 	 */
@@ -79,14 +69,8 @@ public class Crypto {
 	 * 
 	 * @param value
 	 * @param key
-	 * @return
-	 * @throws NoSuchAlgorithmException
-	 * @throws NoSuchProviderException
-	 * @throws NoSuchPaddingException
-	 * @throws InvalidKeyException
-	 * @throws InvalidAlgorithmParameterException
-	 * @throws IllegalBlockSizeException
-	 * @throws BadPaddingException
+	 * 
+	 * @return string descriptografada
 	 * 
 	 * @author danielrocha
 	 */
