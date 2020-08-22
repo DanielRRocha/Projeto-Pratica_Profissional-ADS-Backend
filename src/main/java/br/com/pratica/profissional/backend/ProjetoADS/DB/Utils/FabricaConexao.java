@@ -11,22 +11,26 @@ import br.com.pratica.profissional.backend.ProjetoADS.Helpers.PropertyHelper;
 
 public class FabricaConexao extends Crypto {
 
+	private static Connection conexao;
+	
+	
+	
 	/**
 	 * Inicia conexão com banco de dados
 	 * 
 	 * @author danielrocha
 	 */
-	
 	public static Connection getConnection() {
 		try {
-			String url = PropertyHelper.getStringProperty("env.banco.url");
-			final String usuario = PropertyHelper.getStringProperty("env.banco.usuario");
-			final String senha = PropertyHelper.getStringProperty("env.banco.senha");
+			if(conexao != null && !conexao.isClosed()) {
+				return conexao;
+			}
 
-			return DriverManager.getConnection(url, usuario, senha);
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
+		} catch (SQLException e) {}
+		
+		conexao = getConnection_();
+		
+		return conexao;
 	}
 	
 	/**
@@ -38,11 +42,36 @@ public class FabricaConexao extends Crypto {
 	 */
 	public static Connection getConnection(String name) {
 		try {
-			String url = "jdbc:mysql://localhost:3306/"+ name + "?verifyServerCertificate=false&useSSL=true";
-			final String user = "root";
-			final String password = "12345678";
+			if(conexao != null && !conexao.isClosed()) {
+				return conexao;
+			}
 
-			return DriverManager.getConnection(url, user, password);
+		} catch (SQLException e) {}
+		
+		conexao = getConnection_(name);
+		
+		return conexao;
+	}
+	
+	private static Connection getConnection_() {
+		try {
+			String url = PropertyHelper.getStringProperty("env.banco.url");
+			final String usuario = PropertyHelper.getStringProperty("env.banco.usuario");
+			final String senha = PropertyHelper.getStringProperty("env.banco.senha");
+
+			return DriverManager.getConnection(url, usuario, senha);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	private static Connection getConnection_(String name) {
+		try {
+			String url = "jdbc:mysql://localhost:3306/"+ name + "?verifyServerCertificate=false&useSSL=true";
+			final String usuario = PropertyHelper.getStringProperty("env.banco.usuario");
+			final String senha = PropertyHelper.getStringProperty("env.banco.senha");
+
+			return DriverManager.getConnection(url, usuario, senha);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
