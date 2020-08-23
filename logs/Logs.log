@@ -1,0 +1,13 @@
+[INFO ] 2020-08-23 17:02:45.927 [main] Usuario - Construtor Com parametros
+[DEBUG] 2020-08-23 17:02:45.931 [main] Usuario - Id: 1 - Tipo: Administrador
+[INFO ] 2020-08-23 17:02:45.931 [main] Usuario - Construtor Com parametros
+[DEBUG] 2020-08-23 17:02:45.931 [main] Usuario - Id: 2 - Tipo: Prestador
+[INFO ] 2020-08-23 17:02:45.931 [main] Usuario - Construtor Com parametros
+[DEBUG] 2020-08-23 17:02:45.932 [main] Usuario - Id: 3 - Tipo: Cliente
+[INFO ] 2020-08-23 17:02:49.285 [main] DAO - Entity Manager Factory created
+[INFO ] 2020-08-23 17:02:49.285 [main] DAO - ############### Database operation started ###############
+[INFO ] 2020-08-23 17:02:49.462 [main] DAO - Entity Manager created
+[INFO ] 2020-08-23 17:02:49.467 [main] DAO - Transaction iniciated
+[INFO ] 2020-08-23 17:02:49.490 [main] DAO - Transaction included
+[ERROR] 2020-08-23 17:02:49.599 [main] DAO - Duplicate entry '1' for key 'usuario.PRIMARY'
+[ERROR] 2020-08-23 17:02:49.600 [main] InserirUsuarios - javax.persistence.RollbackException

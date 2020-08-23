@@ -2,11 +2,16 @@ package br.com.pratica.profissional.backend.ProjetoADS.DB.consulta;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.UsuarioDAO;
 import br.com.pratica.profissional.backend.ProjetoADS.DAO.model.Usuario;
 
 public class ConsultaUsuarios {
 
+	private static Logger logger = LogManager.getLogger(ConsultaUsuarios.class);
+	
 	/**
 	 * Consulta ID e tipos de usuarios
 	 * 
@@ -19,14 +24,15 @@ public class ConsultaUsuarios {
 
 			List<Usuario> usuarios = dao.obterTodos();
 
-			System.out.println("\n\nId  | Tipo");
+			logger.info("Id  | Tipo");
 			for (Usuario usuario : usuarios) {
-				System.out.println(" " + usuario.getId() + "  | " + usuario.getTipo());
+				logger.info(" " + usuario.getId() + "  | " + usuario.getTipo());
 			}
 
 			dao.fechar();
-		} catch (Exception e) {
-			System.out.println(e);
+		} catch (RuntimeException e) {
+			logger.error(e);
+			e.printStackTrace();
 		}
 	}
 }

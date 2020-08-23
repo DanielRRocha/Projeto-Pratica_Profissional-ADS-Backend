@@ -20,7 +20,7 @@ public class TesteBancoDeDados {
 		
 		InserirUsuarios.inserirUsuarios();
 		
-		ConsultaUsuarios.showUsers();
+//		ConsultaUsuarios.showUsers();
 		
 	}
 }
