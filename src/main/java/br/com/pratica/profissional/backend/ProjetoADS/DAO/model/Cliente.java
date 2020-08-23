@@ -1,8 +1,10 @@
-package br.com.pratica.profissional.backend.ProjetoADS.DB.model;
+package br.com.pratica.profissional.backend.ProjetoADS.DAO.model;
 
 import javax.persistence.Column;
 
-public class Cliente {
+import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.Entidade;
+
+public class Cliente implements Entidade {
 
 	private Long id;
 	@Column(nullable = false, length = 100)
@@ -19,18 +21,30 @@ public class Cliente {
 	private String senha;
 	private Long tipo_id;
 	
+	
+	/**
+	 * Construtor padrão
+	 * 
+	 * @author danielrocha
+	 */
 	public Cliente() {
 		
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
+	/**
+	 * 
+	 * Construtor recebendo dados do cliente como parametros
+	 * 
+	 * @param nome
+	 * @param sobrenome
+	 * @param username
+	 * @param cpf
+	 * @param email
+	 * @param senha
+	 * @param tipo_id
+	 * 
+	 * @author danielrocha
+	 */
 	public Cliente(String nome, String sobrenome, String username, Long cpf, String email, String senha, Long tipo_id) {
 		super();
 		this.nome = nome;
@@ -42,6 +56,16 @@ public class Cliente {
 		this.tipo_id = tipo_id;
 	}
 
+	// --------- getters e setters --------- //
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	public String getNome() {
 		return nome;
 	}

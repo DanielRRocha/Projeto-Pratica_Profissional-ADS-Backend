@@ -1,4 +1,4 @@
-package br.com.pratica.profissional.backend.ProjetoADS.DB.Utils;
+package br.com.pratica.profissional.backend.ProjetoADS.DAO.infra;
 
 import java.util.List;
 

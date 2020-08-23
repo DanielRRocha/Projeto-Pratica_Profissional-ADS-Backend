@@ -1,13 +1,13 @@
-package br.com.pratica.profissional.backend.ProjetoADS.DB.model;
+package br.com.pratica.profissional.backend.ProjetoADS.DAO.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.Entidade;
+import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.Entidade;
 
 
 @Entity
-public class Usuario implements Entidade{
+public class Usuario implements Entidade {
 
 	@Id
 	private Long id;

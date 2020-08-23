@@ -2,11 +2,10 @@ package br.com.pratica.profissional.backend.ProjetoADS.DB.inclusao;
 
 import javax.persistence.RollbackException;
 
-import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.DAO;
-import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.FabricaConexao;
-import br.com.pratica.profissional.backend.ProjetoADS.DB.model.Usuario;
+import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.DAO;
+import br.com.pratica.profissional.backend.ProjetoADS.DAO.model.Usuario;
 
-public class InserirUsuarios extends FabricaConexao{
+public class InserirUsuarios {
 
 	/**
 	 * Inserir usuarios na tabela usuarios
