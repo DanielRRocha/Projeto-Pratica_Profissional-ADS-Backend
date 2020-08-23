@@ -11,13 +11,14 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
 import br.com.pratica.profissional.backend.ProjetoADS.DB.consulta.ConsultaUsuarios;
+import br.com.pratica.profissional.backend.ProjetoADS.DB.inclusao.InserirUsuarios;
 
 
 public class TesteBancoDeDados {
 	
 	public static void main(String[] args) throws SQLException, InvalidKeyException, NoSuchAlgorithmException, NoSuchProviderException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException {
 		
-//		InserirUsuarios.inserirUsuarios();
+		InserirUsuarios.inserirUsuarios();
 		
 		ConsultaUsuarios.showUsers();
 		

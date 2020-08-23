@@ -3,9 +3,11 @@ package br.com.pratica.profissional.backend.ProjetoADS.DB.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.Entidade;
+
 
 @Entity
-public class Usuario {
+public class Usuario implements Entidade{
 
 	@Id
 	private Long id;
@@ -38,41 +40,20 @@ public class Usuario {
 		this.tipo = tipo;
 	}
 
-
-	/**
-	 *  Retorna Id do usuario
-	 * @return id
-	 * 
-	 * @author danielrocha
-	 */
+	// --------- getters e setters --------- //
+	
 	public Long getId() {
 		return id;
 	}
 
-	/**
-	 * Seta id do usuario
-	 * 
-	 * @param id
-	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	/**
-	 *  Retorna tipo do usuario
-	 * @return tipo
-	 * 
-	 * @author danielrocha
-	 */
 	public String getTipo() {
 		return tipo;
 	}
 
-	/**
-	 * Seta tipo do usuario
-	 * 
-	 * @param tipo
-	 */
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}

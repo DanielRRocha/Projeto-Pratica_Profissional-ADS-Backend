@@ -1,6 +1,9 @@
 package br.com.pratica.profissional.backend.ProjetoADS.DB.consulta;
 
+import java.util.List;
+
 import br.com.pratica.profissional.backend.ProjetoADS.DB.Utils.FabricaConexao;
+import br.com.pratica.profissional.backend.ProjetoADS.DB.infra.UsuarioDAO;
 import br.com.pratica.profissional.backend.ProjetoADS.DB.model.Usuario;
 
 public class ConsultaUsuarios extends FabricaConexao {
@@ -15,21 +18,23 @@ public class ConsultaUsuarios extends FabricaConexao {
 		
 		try {
 			
-			getConnection_Hibernate();
+//			ProdutoDAO dao = new ProdutoDAO();
+//			List<Produto> produtos = dao.obterTodos();
+//			
+//			for(Produto produto: produtos) {
+//				System.out.println("Id: " + produto.getId() + ",  Nome: " + produto.getNome());
+//			}
 			
-			Usuario admin = getEm().find(Usuario.class, 1L);
-			Usuario prestador = getEm().find(Usuario.class, 2L);
-			Usuario cliente = getEm().find(Usuario.class, 3L);
+			UsuarioDAO dao = new UsuarioDAO();
+			
+			List<Usuario> usuarios = dao.obterTodos();
 			
 			System.out.println("\n\nId  | Tipo");
-			System.out.println(" " + admin.getId() + "  | " + admin.getTipo());
-			System.out.println(" " + prestador.getId() + "  | " + prestador.getTipo());
-			System.out.println(" " + cliente.getId() + "  | " + cliente.getTipo()+ "\n\n");
+			for(Usuario usuario: usuarios) {
+				System.out.println(" " + usuario.getId() + "  | " + usuario.getTipo());
+			}
 			
-//			System.out.println(usuario.getNome());
-//			
-			getEm().close();
-			getEmf().close();
+			dao.fechar();
 		} catch (Exception e) {
 			System.out.println(e);
 		}

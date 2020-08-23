@@ -31,16 +31,17 @@ public class FabricaConexao extends Crypto {
 		em = emf.createEntityManager();
 	}
 	
-	/**
-	 * 
-	 * @return
-	 */
 	public static EntityManager getEm() {
 		return em;
 	}
 
 	public static EntityManagerFactory getEmf() {
 		return emf;
+	}
+	
+	public static void closeConnection() {
+		em.close();
+		emf.close();
 	}
 
 }
