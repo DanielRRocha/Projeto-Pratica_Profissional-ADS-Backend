@@ -1,5 +1,6 @@
 package br.com.pratica.profissional.backend.ProjetoADS.DAO.infra;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +11,9 @@ import javax.persistence.TypedQuery;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
+
+import br.com.pratica.profissional.backend.ProjetoADS.DAO.model.Usuario;
 
 public class DAO<E extends Entidade> {
 
@@ -79,10 +83,10 @@ public class DAO<E extends Entidade> {
 	 * @param entidade
 	 * 
 	 * @author danielrocha
+	 * @throws SQLIntegrityConstraintViolationException 
 	 */
 	public DAO<E> incluir(E entidade) {
-		em.persist(entidade);
-		logger.info("Transaction included");
+			em.persist(entidade);
 		return this;
 	}
 
@@ -92,10 +96,40 @@ public class DAO<E extends Entidade> {
 	 * @param entidade
 	 * 
 	 * @author danielrocha
+	 * @throws SQLIntegrityConstraintViolationException 
 	 */
 	public DAO<E> incluirAtomico(E entidade) {
 		return this.abrirT().incluir(entidade).fecharT();
 	}
+	
+	/**
+	 * Busca Usuario pelo tipo de usuario
+	 * 
+	 * @param l
+	 * @author danielrocha
+	 */
+	public E buscarUsuarioPeloTipo(Long l) {
+		if (classe == null) {
+			logger.info("Classe nula");
+			throw new UnsupportedOperationException("Classe nula");
+		}
+		E it = em.find(classe, l);
+		return it;
+	}
+	
+//	public Usuario buscarUsuario(Long cpf) {
+//		
+//		DAO<Usuario> dao = new DAO<Usuario>();
+//		List<Usuario> usuarios = dao.obterTodos();
+//		Usuario e = null;
+//		
+//		for(Usuario usuario : usuarios) {
+//			if(usuario.getCpf() == cpf) {
+//				return usuario;
+//			}
+//		}
+//		return e;
+//	}
 	
 	/**
 	 * Obtem os 10 primeiros registros na tabela
@@ -132,7 +166,6 @@ public class DAO<E extends Entidade> {
 		
 		return query.getResultList();
 	}
-	
 	
 	/**
 	 * Encerra a Entity Manager

@@ -5,12 +5,14 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.UsuarioDAO;
+import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.DAO;
+import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.TipoUsuarioDAO;
+import br.com.pratica.profissional.backend.ProjetoADS.DAO.model.TipoUsuario;
 import br.com.pratica.profissional.backend.ProjetoADS.DAO.model.Usuario;
 
-public class ConsultaUsuarios {
+public class ConsultaTipoUsuarios {
 
-	private static Logger logger = LogManager.getLogger(ConsultaUsuarios.class);
+	private static Logger logger = LogManager.getLogger(ConsultaTipoUsuarios.class);
 	
 	/**
 	 * Consulta ID e tipos de usuarios
@@ -20,12 +22,12 @@ public class ConsultaUsuarios {
 	public static void showUsers() {
 
 		try {
-			UsuarioDAO dao = new UsuarioDAO();
+			TipoUsuarioDAO dao = new TipoUsuarioDAO();
 
-			List<Usuario> usuarios = dao.obterTodos();
+			List<TipoUsuario> usuarios = dao.obterTodos();
 
 			logger.info("Id  | Tipo");
-			for (Usuario usuario : usuarios) {
+			for (TipoUsuario usuario : usuarios) {
 				logger.info(" " + usuario.getId() + "  | " + usuario.getTipo());
 			}
 

@@ -8,27 +8,27 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.DAO;
-import br.com.pratica.profissional.backend.ProjetoADS.DAO.model.Usuario;
+import br.com.pratica.profissional.backend.ProjetoADS.DAO.model.TipoUsuario;
 
-public class InserirUsuarios {
+public class InserirTipoUsuarios {
 
-	private static Logger logger = LogManager.getLogger(InserirUsuarios.class);
+	private static Logger logger = LogManager.getLogger(InserirTipoUsuarios.class);
 			
 			
 	/**
-	 * Inserir usuarios na tabela usuarios
+	 * Inserir tipo de usuarios na tabela tipoUsuarios
 	 * 
 	 * @author danielrocha
 	 * @throws SQLIntegrityConstraintViolationException 
 	 */
-	public static void inserirUsuarios() {
+	public static void inserirTipoUsuarios() {
 
 		try {
-		Usuario admin = new Usuario(1L, "Administrador");
-		Usuario prestador = new Usuario(2L, "Prestador");
-		Usuario cliente = new Usuario(3L, "Cliente");
+		TipoUsuario admin = new TipoUsuario(1L, "Administrador");
+		TipoUsuario prestador = new TipoUsuario(2L, "Prestador");
+		TipoUsuario cliente = new TipoUsuario(3L, "Cliente");
 
-		DAO<Usuario> dao = new DAO<Usuario>(Usuario.class);
+		DAO<TipoUsuario> dao = new DAO<TipoUsuario>(TipoUsuario.class);
 		
 		dao.incluirAtomico(admin);
 		dao.incluirAtomico(prestador);

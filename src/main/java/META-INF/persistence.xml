@@ -8,6 +8,8 @@
 		<persistence-unit name="marido_de_aluguel">
 	
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<class>br.com.pratica.profissional.backend.ProjetoADS.DAO.model.TipoUsuario</class>
 		<class>br.com.pratica.profissional.backend.ProjetoADS.DAO.model.Usuario</class>
 		
 		<properties>
