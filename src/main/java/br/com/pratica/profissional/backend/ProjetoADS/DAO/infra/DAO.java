@@ -11,9 +11,6 @@ import javax.persistence.TypedQuery;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
-
-import br.com.pratica.profissional.backend.ProjetoADS.DAO.model.Usuario;
 
 public class DAO<E extends Entidade> {
 

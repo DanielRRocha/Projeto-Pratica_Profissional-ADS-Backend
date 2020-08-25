@@ -11,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.Entidade;
-import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.TipoUsuarioDAO;
 
 @Entity
 public class Usuario implements Entidade {
