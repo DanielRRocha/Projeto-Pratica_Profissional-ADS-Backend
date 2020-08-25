@@ -4,7 +4,7 @@
 
 Projeto de prática profissional ADS 5 Semestre Mackenzie
 
-Backend em Java utilizando JDBC e MySQL
+Backend em Java utilizando JPA, Hibernate, Spring e MySQL
 
 ##### Integrantes
 * Carlos Rodrigues de Oliveira
@@ -15,12 +15,31 @@ Backend em Java utilizando JDBC e MySQL
 ---
 ### Git
 
-#### Fluxo
+#### Fluxo Atualização local
+- Acesar via terminal/CmDer a pasta do projeto.
+
+- Acessar a branch que deseja atualizar
+```
+$ git checkout <nome da branch>
+```
+
+- Atualizar a branch local com a branch remota
+```
+$ git pull origin <nome da branch>
+```
+
+
+#### Fluxo Criação / Refatoração
 - Acesar via terminal/CmDer a pasta do projeto.
 
 - Acessar a branch **develop**
 ```
 $ git checkout develop
+```
+
+- Atualizar a branch local com a branch remota
+```
+$ git pull origin develop
 ```
 
 - Criar uma branch nova com seu nome
@@ -50,6 +69,21 @@ $ git push origin develop-<nome>
 - Verificar status do repositório local (apenas sobre a branch atual)
 ```
 $ git status
+```
+
+- Atualizar a branch local com a branch remota
+```
+$ git pull origin <nome da branch>
+```
+
+- Verificar as branchs na maquina
+```
+$ git branch
+```
+
+- Baixar as referencias com nomes das branchs remotas e tags
+```
+$ git fetch
 ```
 
 - Adicionar arquivos ao pacote para commitar e subir pararepositório remoto
