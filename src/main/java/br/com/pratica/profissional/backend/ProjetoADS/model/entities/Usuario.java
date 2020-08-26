@@ -1,19 +1,19 @@
-package br.com.pratica.profissional.backend.ProjetoADS.DAO.model;
+package br.com.pratica.profissional.backend.ProjetoADS.model.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.Entidade;
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.Constants;
+import br.com.pratica.profissional.backend.ProjetoADS.Helpers.Crypto;
 
 @Entity
-public class Usuario implements Entidade {
+public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Usuario implements Entidade {
 	private String username;
 	
 	@Column(nullable = false, unique = true)
-	private Long cpf;
+	private String cpf;
 	
 	@Column(nullable = false, unique = true)
 	private String email;
@@ -37,8 +37,8 @@ public class Usuario implements Entidade {
 	@Column(nullable = false)
 	private String senha;
 	
-	@ManyToOne
-	private TipoUsuario usuario;
+	@Column(nullable = false)
+	private int usuario_id;
 	
 	private static Logger logger = LogManager.getLogger(Usuario.class);
 
@@ -66,7 +66,7 @@ public class Usuario implements Entidade {
 	 * 
 	 * @author danielrocha
 	 */
-	public Usuario(String nome, String sobrenome, String username, Long cpf, String email, String senha, TipoUsuario usuario) {
+	public Usuario(String nome, String sobrenome, String username, String cpf, String email, String senha, int usuario) {
 		super();
 		this.nome = nome;
 		this.sobrenome = sobrenome;
@@ -74,7 +74,7 @@ public class Usuario implements Entidade {
 		this.cpf = cpf;
 		this.email = email;
 		this.senha = senha;
-		this.usuario = usuario;
+		this.usuario_id = usuario;
 	}
 
 	// --------- getters e setters --------- //
@@ -119,12 +119,12 @@ public class Usuario implements Entidade {
 		this.username = username;
 	}
 
-	public Long getCpf() {
+	public String getCpf() {
 		logger.debug("Get CPF.: " + cpf);
 		return cpf;
 	}
 
-	public void setCpf(Long cpf) {
+	public void setCpf(String cpf) {
 		logger.debug("Set CPF.: " + cpf);
 		this.cpf = cpf;
 	}
@@ -150,12 +150,11 @@ public class Usuario implements Entidade {
 		this.senha = senha;
 	}
 
-	public String getUsuario() {
-		String user = usuario.getTipo();
-		return user;
+	public int getUsuario_id() {
+		return usuario_id;
 	}
 
-	public void setUsuario(TipoUsuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario_id(int usuario_id) {
+		this.usuario_id = usuario_id;
 	}
 }
