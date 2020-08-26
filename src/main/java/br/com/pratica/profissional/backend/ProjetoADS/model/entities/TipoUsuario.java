@@ -1,21 +1,21 @@
-package br.com.pratica.profissional.backend.ProjetoADS.DAO.model;
+package br.com.pratica.profissional.backend.ProjetoADS.model.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import br.com.pratica.profissional.backend.ProjetoADS.DAO.infra.Entidade;
-
 
 @Entity
-public class TipoUsuario implements Entidade {
+public class TipoUsuario {
 
 	@Id
-	@Column(unique = true)
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	
 	@Column(unique = true)
 	private String tipo;
@@ -26,40 +26,35 @@ public class TipoUsuario implements Entidade {
 	/**
 	 * Construtor padrao
 	 * 
-	 * @param id
-	 * @param tipo
-	 * 
 	 * @author danielrocha
 	 */
 	public TipoUsuario() {
-		logger.info("Construtor padrão");
+		logger.info("Utilizando construtor padrão");
 	}
 
 	/**
-	 * Construtor recebendo dois parametros
+	 * Construtor recebendo o tipo como parametros
 	 * 
-	 * @param id
 	 * @param tipo
 	 * 
 	 * @author danielrocha
 	 */
-	public TipoUsuario(Long id, String tipo) {
+	public TipoUsuario(String tipo) {
 		super();
-		this.id = id;
 		this.tipo = tipo;
 		
-		logger.info("Construtor Com parametros");
+		logger.info("Utilizando construtor com parametros");
 		logger.debug("Id: " + id + " - Tipo: " + tipo);
 	}
 
 	// --------- getters e setters --------- //
 	
-	public Long getId() {
+	public int getId() {
 		logger.debug("Get Id: " + id);
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		logger.debug("Set Id: " + id);
 		this.id = id;
 	}
