@@ -4,11 +4,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +21,7 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-	private static Logger logger = LogManager.getLogger(UsuarioController.class);
+//	private static Logger logger = LogManager.getLogger(UsuarioController.class);
 	
 	@PostMapping
 	public Usuario novoUsuario(String nome, String sobrenome, String username, String cpf, String email, String senha, int usuario_id) throws SQLIntegrityConstraintViolationException {

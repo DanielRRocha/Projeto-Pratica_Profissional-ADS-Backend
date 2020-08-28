@@ -5,12 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import br.com.pratica.profissional.backend.ProjetoADS.Helpers.Constants;
-import br.com.pratica.profissional.backend.ProjetoADS.Helpers.Crypto;
 
 @Entity
 public class Usuario {
@@ -20,24 +19,31 @@ public class Usuario {
 	private Long id;
 	
 	@Column(nullable = false, length = 100)
+	@NotBlank(message = "Necessário preencher nome")
 	private String nome;
 	
 	@Column(nullable = false)
 	private String sobrenome;
 	
 	@Column(nullable = false, unique = true)
+	@NotBlank(message = "Necessário preencher username")
 	private String username;
 	
 	@Column(nullable = false, unique = true)
+	@NotBlank(message = "Necessário preencher CPF")
 	private String cpf;
 	
 	@Column(nullable = false, unique = true)
+	@Email(message = "E-mail invalido")
+	@NotBlank(message = "Necessario preencher o e-mail")
 	private String email;
 	
 	@Column(nullable = false)
+	@NotBlank(message = "Necessário preencher senha")
 	private String senha;
 	
 	@Column(nullable = false)
+	@NotBlank(message = "Necessário preencher tipo de usuario")
 	private int usuario_id;
 	
 	private static Logger logger = LogManager.getLogger(Usuario.class);
